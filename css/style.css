@@ -11,13 +11,17 @@ html {
 body {
   font-family: 'Press Start 2P', cursive;
   background:
-    radial-gradient(circle at top, #14001f 0%, #050510 50%, #000000 100%);
-  color: #f4f1de;
-  line-height: 1.8;
+    radial-gradient(circle at top, #101827 0%, #05070d 55%, #000000 100%);
+
+  color: #e8ecf1;
+
+  line-height: 2;
+  letter-spacing: 1px;
 }
 
 a {
   text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
 }
 
 header {
@@ -28,58 +32,65 @@ header {
   justify-content: center;
 
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
 
   background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+    linear-gradient(rgba(5,7,13,0.75), rgba(0,0,0,0.88)),
     url('../assets/images/channel-banner.jpg');
 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #050510;
+  background-color: #05070d;
 }
 
 .hero {
-  max-width: 900px;
+  max-width: 950px;
 }
 
 .hero h1 {
-  font-size: 4rem;
-  margin-bottom: 30px;
+  font-size: 3.8rem;
 
-  color: #f6d365;
+  margin-bottom: 40px;
+
+  color: #7dd3fc;
 
   text-shadow:
-    0 0 10px rgba(246,211,101,0.35);
+    0 0 12px rgba(125,211,252,0.25);
+
+  line-height: 1.4;
 }
 
 .hero p {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 
-  max-width: 750px;
+  max-width: 760px;
 
   margin: auto;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 
-  color: #d6d6d6;
+  color: #cbd5e1;
+
+  line-height: 2.2;
 }
 
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 16px 28px;
+  padding: 18px 30px;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 
-  font-size: 0.7rem;
+  font-size: 0.65rem;
+
+  letter-spacing: 2px;
 }
 
 .btn:hover {
@@ -87,133 +98,170 @@ header {
 }
 
 .btn-primary {
-  background: #d6c48f;
-  color: #111;
+  background: #7dd3fc;
+  color: #051018;
+
+  box-shadow:
+    0 0 12px rgba(125,211,252,0.15);
 }
 
 .btn-secondary {
-  border: 2px solid #8f7d52;
-  color: #d6c48f;
+  border: 2px solid #facc15;
+
+  color: #facc15;
+
   background: rgba(255,255,255,0.03);
 }
 
 section {
-  padding: 100px 20px;
+  padding: 120px 20px;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: auto;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 .section-title h2 {
-  margin-bottom: 20px;
-  color: #f6d365;
+  color: #7dd3fc;
+
+  margin-bottom: 25px;
+
+  font-size: 1.3rem;
 }
 
 .section-title p {
-  color: #bdbdbd;
+  color: #94a3b8;
+
   font-size: 0.7rem;
+
+  line-height: 2;
 }
 
 .video-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
+    repeat(auto-fit, minmax(340px, 1fr));
 
-  gap: 40px;
+  gap: 45px;
 }
 
 .video-card {
-  background: rgba(15,10,40,0.85);
+  background: rgba(15,23,42,0.82);
 
-  border: 1px solid rgba(214,196,143,0.2);
+  border: 1px solid rgba(125,211,252,0.08);
 
-  border-radius: 14px;
+  border-radius: 18px;
 
   overflow: hidden;
 
   transition: 0.3s ease;
+
+  backdrop-filter: blur(8px);
 }
 
 .video-card:hover {
   transform: translateY(-8px);
 
+  border-color: rgba(250,204,21,0.35);
+
   box-shadow:
-    0 0 20px rgba(214,196,143,0.15);
+    0 0 25px rgba(125,211,252,0.08);
 }
 
 .video-card iframe {
   width: 100%;
-  height: 250px;
+  height: 260px;
 }
 
 .video-content {
-  padding: 25px;
+  padding: 28px;
 }
 
 .video-content h3 {
-  margin-bottom: 15px;
-  color: #f6d365;
+  margin-bottom: 20px;
 
-  font-size: 0.8rem;
+  color: #facc15;
+
+  font-size: 0.75rem;
+
+  line-height: 1.8;
 }
 
 .video-content p {
-  color: #cccccc;
-  font-size: 0.65rem;
+  color: #cbd5e1;
+
+  font-size: 0.62rem;
+
+  line-height: 2;
 }
 
 .about-section {
   background:
-    linear-gradient(180deg, #0a0015 0%, #140028 100%);
+    linear-gradient(180deg, #0b1220 0%, #070b14 100%);
 }
 
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+
+  gap: 80px;
 }
 
 .about-container h2 {
-  margin-bottom: 30px;
-  color: #f6d365;
+  margin-bottom: 35px;
+
+  color: #7dd3fc;
+
+  font-size: 1.2rem;
 }
 
 .about-container p {
-  font-size: 0.7rem;
-  color: #cccccc;
+  color: #cbd5e1;
+
+  font-size: 0.68rem;
+
+  line-height: 2.2;
 }
 
 .stats-grid {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+
+  gap: 24px;
 }
 
 .stat-card {
-  background: rgba(0,0,0,0.45);
+  background: rgba(15,23,42,0.75);
 
-  border: 1px solid rgba(214,196,143,0.15);
+  border: 1px solid rgba(250,204,21,0.08);
 
-  border-radius: 12px;
+  border-radius: 16px;
 
-  padding: 25px;
+  padding: 30px;
 }
 
 .stat-card h3 {
-  margin-bottom: 15px;
-  color: #f6d365;
+  color: #facc15;
+
+  margin-bottom: 18px;
+
+  font-size: 1rem;
 }
 
 .stat-card p {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
+
+  color: #cbd5e1;
+
+  line-height: 2;
 }
 
 .contact-section {
@@ -221,14 +269,21 @@ section {
 }
 
 .contact-section h2 {
-  margin-bottom: 30px;
-  color: #f6d365;
+  margin-bottom: 35px;
+
+  color: #7dd3fc;
+
+  font-size: 1.2rem;
 }
 
 .contact-section p {
-  margin-bottom: 40px;
-  font-size: 0.7rem;
-  color: #cccccc;
+  margin-bottom: 45px;
+
+  color: #cbd5e1;
+
+  font-size: 0.68rem;
+
+  line-height: 2;
 }
 
 @media(max-width: 768px) {
@@ -238,7 +293,7 @@ section {
   }
 
   .hero p {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
   }
 
   .about-container {
@@ -250,6 +305,10 @@ section {
   }
 
   .btn {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
   }
 }
