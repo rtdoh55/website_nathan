@@ -65,14 +65,14 @@ header {
   padding: 60px 20px;
 
   background:
-    linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.95)),
+    linear-gradient(180deg, #0b1220 0%, #070b14 100%),
     url('../assets/images/channel-banner.jpg');
 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .hero {
