@@ -2,22 +2,22 @@ const videos = [
   {
     title: 'Travel Cinematic Reel',
     description: 'Drone footage and cinematic travel storytelling.',
-    youtubeId: 'ScMzIvxBSi4'
+    youtubeId: 'l61OVu_VVak'
   },
   {
     title: 'Commercial Product Edit',
     description: 'High-end product commercial with motion graphics.',
-    youtubeId: 'ysz5S6PUM-U'
+    youtubeId: 'hy4HhWOmjuQ'
   },
   {
     title: 'Documentary Interview',
     description: 'Narrative-focused documentary editing project.',
-    youtubeId: 'aqz-KE-bpKQ'
+    youtubeId: 'jHukgl8QC94'
   },
   {
     title: 'Music Video Production',
     description: 'Creative music video with visual effects.',
-    youtubeId: 'dQw4w9WgXcQ'
+    youtubeId: 'D2p3FGeNtzc'
   }
 ];
 
