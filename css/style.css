@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #0b0b0b;
+  background: radial-gradient(circle at top, #12002b 0%, #050510 45%, #000000 100%);
   color: white;
   line-height: 1.6;
 }
@@ -19,7 +19,7 @@ header {
   text-align: center;
   padding: 40px 20px;
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
-  url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1600&auto=format&fit=crop') center/cover;
+  url('../assets/images/channel-banner.jpg') center/cover;
 }
 
 .hero h1 {
@@ -49,12 +49,15 @@ header {
 }
 
 .btn-primary {
-  background: white;
-  color: black;
+  background: #00f7ff;
+  color: #050510;
+  box-shadow: 0 0 15px #00f7ff;
 }
 
 .btn-secondary {
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid #ff00ea;
+  color: #ff7af6;
+  box-shadow: 0 0 10px rgba(255,0,234,0.4);
 }
 
 .btn:hover {
@@ -82,15 +85,16 @@ section {
 }
 
 .video-card {
-  background: #141414;
+  background: rgba(15, 10, 40, 0.9);
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(0,247,255,0.25);
   transition: transform 0.3s ease;
 }
 
 .video-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0,247,255,0.25);
 }
 
 .video-card iframe {
@@ -111,7 +115,7 @@ section {
 }
 
 .about-section {
-  background: #101010;
+  background: linear-gradient(180deg, #090014 0%, #130028 100%);
 }
 
 .about-container {
@@ -127,7 +131,8 @@ section {
 }
 
 .stat-card {
-  background: #181818;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,0,234,0.2);
   padding: 25px;
   border-radius: 10px;
 }
