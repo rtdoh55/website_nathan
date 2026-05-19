@@ -122,24 +122,23 @@ header {
   transition: 0.25s ease;
 
   display: inline-block;
+
+  text-decoration: none;
 }
 
-/* BUTTON STYLE (WHITE BACKGROUND, BLACK TEXT) */
+/* BUTTONS */
 .btn-primary,
 .btn-secondary {
   background: #ffffff;
-  color: #000000;
+  color: #000000 !important;
 
-  border: 2px solid #ffffff;
+  border: 2px solid #000000;
 }
 
-/* hover effect */
+/* hover */
 .btn:hover {
   transform: translateY(-3px);
-
   background: #e6e6e6;
-
-  box-shadow: 0 0 12px rgba(255,255,255,0.25);
 }
 
 /* =========================
