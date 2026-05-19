@@ -14,23 +14,24 @@ body {
   background:
     radial-gradient(circle at top, #0b1220 0%, #05070d 55%, #000000 100%);
 
-  color: #e8ecf1;
+  color: #ffffff;
 
   line-height: 2;
   letter-spacing: 1px;
 }
 
-/* remove ALL underlines */
+/* remove all link underlines */
 a,
 a:visited,
 a:hover,
 a:active {
   text-decoration: none;
+  color: inherit;
 }
 
-/* ===================== */
-/* SATURN LOGO TOP LEFT */
-/* ===================== */
+/* =========================
+   SATURN LOGO (TOP LEFT)
+========================= */
 .logo-saturn {
   position: fixed;
   top: 18px;
@@ -41,7 +42,7 @@ a:active {
 
   z-index: 9999;
 
-  filter: drop-shadow(0 0 10px rgba(125,211,252,0.35));
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
 
   transition: transform 0.3s ease;
 }
@@ -50,9 +51,9 @@ a:active {
   transform: scale(1.1) rotate(8deg);
 }
 
-/* ===================== */
-/* HERO SECTION */
-/* ===================== */
+/* =========================
+   HERO (CHANNEL BANNER)
+========================= */
 header {
   min-height: 100vh;
 
@@ -61,15 +62,17 @@ header {
   justify-content: center;
 
   text-align: center;
+
   padding: 60px 20px;
 
   background:
-    linear-gradient(rgba(5,7,13,0.75), rgba(0,0,0,0.88)),
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
     url('../assets/images/channel-banner.jpg');
 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+
   background-color: #05070d;
 }
 
@@ -80,23 +83,26 @@ header {
 .hero h1 {
   font-size: 3.5rem;
 
-  color: #7dd3fc;
+  color: #ffffff;
 
   margin-bottom: 40px;
 
-  text-shadow: 0 0 12px rgba(125,211,252,0.25);
+  text-shadow: 0 0 10px rgba(255,255,255,0.15);
 }
 
 .hero p {
   font-size: 0.7rem;
 
-  color: #cbd5e1;
+  color: #ffffff;
 
   margin-bottom: 50px;
 
   line-height: 2.2;
 }
 
+/* =========================
+   BUTTONS
+========================= */
 .hero-buttons {
   display: flex;
   justify-content: center;
@@ -104,9 +110,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* ===================== */
-/* BUTTONS */
-/* ===================== */
 .btn {
   padding: 16px 28px;
 
@@ -114,29 +117,34 @@ header {
 
   border-radius: 12px;
 
+  letter-spacing: 2px;
+
   transition: 0.25s ease;
 
-  letter-spacing: 2px;
+  display: inline-block;
 }
 
+/* BUTTON STYLE (WHITE BACKGROUND, BLACK TEXT) */
+.btn-primary,
+.btn-secondary {
+  background: #ffffff;
+  color: #000000;
+
+  border: 2px solid #ffffff;
+}
+
+/* hover effect */
 .btn:hover {
   transform: translateY(-3px);
+
+  background: #e6e6e6;
+
+  box-shadow: 0 0 12px rgba(255,255,255,0.25);
 }
 
-.btn-primary {
-  background: #7dd3fc;
-  color: #05070d;
-}
-
-.btn-secondary {
-  border: 2px solid #facc15;
-  color: #facc15;
-  background: rgba(255,255,255,0.03);
-}
-
-/* ===================== */
-/* SECTIONS */
-/* ===================== */
+/* =========================
+   SECTIONS
+========================= */
 section {
   padding: 120px 20px;
 }
@@ -146,35 +154,36 @@ section {
   margin: auto;
 }
 
-/* ===================== */
-/* PORTFOLIO */
-/* ===================== */
+/* =========================
+   PORTFOLIO
+========================= */
 .section-title {
   text-align: center;
   margin-bottom: 70px;
 }
 
 .section-title h2 {
-  color: #7dd3fc;
   margin-bottom: 20px;
   font-size: 1.1rem;
 }
 
 .section-title p {
-  color: #94a3b8;
   font-size: 0.65rem;
+  color: #ffffff;
 }
 
 .video-grid {
   display: grid;
+
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
   gap: 45px;
 }
 
 .video-card {
   background: rgba(15,23,42,0.85);
 
-  border: 1px solid rgba(125,211,252,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
 
   border-radius: 16px;
 
@@ -185,7 +194,8 @@ section {
 
 .video-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(250,204,21,0.35);
+
+  box-shadow: 0 0 18px rgba(255,255,255,0.15);
 }
 
 .video-card iframe {
@@ -198,21 +208,21 @@ section {
 }
 
 .video-content h3 {
-  color: #facc15;
   font-size: 0.7rem;
   margin-bottom: 18px;
 }
 
 .video-content p {
-  color: #cbd5e1;
   font-size: 0.6rem;
+  color: #ffffff;
 }
 
-/* ===================== */
-/* ABOUT */
-/* ===================== */
+/* =========================
+   ABOUT
+========================= */
 .about-section {
-  background: linear-gradient(180deg, #0b1220 0%, #070b14 100%);
+  background:
+    linear-gradient(180deg, #0b1220 0%, #070b14 100%);
 }
 
 .about-container {
@@ -222,13 +232,12 @@ section {
 }
 
 .about-container h2 {
-  color: #7dd3fc;
   margin-bottom: 30px;
 }
 
 .about-container p {
-  color: #cbd5e1;
   font-size: 0.65rem;
+  color: #ffffff;
   line-height: 2.2;
 }
 
@@ -241,7 +250,7 @@ section {
 .stat-card {
   background: rgba(15,23,42,0.7);
 
-  border: 1px solid rgba(250,204,21,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
 
   border-radius: 14px;
 
@@ -249,36 +258,34 @@ section {
 }
 
 .stat-card h3 {
-  color: #facc15;
   margin-bottom: 18px;
 }
 
 .stat-card p {
   font-size: 0.6rem;
-  color: #cbd5e1;
+  color: #ffffff;
 }
 
-/* ===================== */
-/* CONTACT */
-/* ===================== */
+/* =========================
+   CONTACT
+========================= */
 .contact-section {
   text-align: center;
 }
 
 .contact-section h2 {
-  color: #7dd3fc;
   margin-bottom: 30px;
 }
 
 .contact-section p {
-  color: #cbd5e1;
   font-size: 0.65rem;
   margin-bottom: 45px;
+  color: #ffffff;
 }
 
-/* ===================== */
-/* MOBILE */
-/* ===================== */
+/* =========================
+   MOBILE
+========================= */
 @media(max-width: 768px) {
 
   .hero h1 {
@@ -291,5 +298,9 @@ section {
 
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .btn {
+    font-size: 0.55rem;
   }
 }
