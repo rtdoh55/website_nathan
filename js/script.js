@@ -21,11 +21,13 @@ const videos = [
   }
 ];
 
-const videoGrid = document.getElementById('videoGrid');
+const videoGrid = document.getElementById("videoGrid");
 
 videos.forEach(video => {
-  const card = document.createElement('div');
-  card.classList.add('video-card');
+
+  const card = document.createElement("div");
+
+  card.classList.add("video-card");
 
   card.innerHTML = `
     <iframe
