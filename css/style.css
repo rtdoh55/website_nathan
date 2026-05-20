@@ -28,6 +28,7 @@ body {
   z-index: 0;
   pointer-events: none;
   background: #000000;
+  display: block;
 }
 
 /* Everything else sits above canvas */
@@ -52,10 +53,9 @@ header, section, .logo-saturn {
   position: relative;
   display: inline-block;
 
-  /* Color cycle animation */
-  animation: colorCycle 3s linear infinite, titleFlicker 6s steps(1) infinite;
+  animation: titleFlicker 6s steps(1) infinite;
 
-  /* Base gradient */
+  /* Original brand gradient */
   background: linear-gradient(90deg, #CD4243, #426E71, #86B0B8, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -109,12 +109,6 @@ header, section, .logo-saturn {
   0%, 97%, 100%  { opacity: 1; }
   98%            { opacity: 0.1; }
   99%            { opacity: 1; }
-}
-
-@keyframes colorCycle {
-  0%   { filter: hue-rotate(0deg) brightness(1); }
-  50%  { filter: hue-rotate(30deg) brightness(1.2); }
-  100% { filter: hue-rotate(0deg) brightness(1); }
 }
 
 /* Scanline overlay across title */
@@ -192,7 +186,7 @@ a:active {
 }
 
 /* =========================
-   HERO (CHANNEL BANNER)
+   HERO
 ========================= */
 header {
   min-height: 100vh;

@@ -1,11 +1,13 @@
 // =========================
 // STARFIELD CANVAS
 // =========================
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   const canvas = document.getElementById('starfield');
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
   let W, H, stars = [];
+  const DPR = window.devicePixelRatio || 1;
 
   const STAR_COUNT = 180;
   const PIXEL_SIZE_MIN = 1;
@@ -14,8 +16,13 @@
   const SPEED_MAX = 1.8;
 
   function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width  = W * DPR;
+    canvas.height = H * DPR;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
   }
 
   function randomStar(fromBottom) {
@@ -87,7 +94,7 @@
 
   init();
   requestAnimationFrame(draw);
-})();
+}); // end DOMContentLoaded
 
 // =========================
 // VIDEO GRID
