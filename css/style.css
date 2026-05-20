@@ -10,14 +10,154 @@ html {
 
 body {
   font-family: 'Press Start 2P', cursive;
-
-  background:
-    radial-gradient(circle at top, #0b1220 0%, #05070d 55%, #000000 100%);
-
+  background: #000000;
   color: #ffffff;
-
   line-height: 2;
   letter-spacing: 1px;
+}
+
+/* =========================
+   STARFIELD CANVAS
+========================= */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: #000000;
+}
+
+/* Everything else sits above canvas */
+header, section, .logo-saturn {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   GALAGA TITLE
+========================= */
+.galaga-title {
+  position: relative;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+/* Main glitch text */
+.title-glitch {
+  font-size: clamp(2rem, 7vw, 4.5rem);
+  letter-spacing: 6px;
+  position: relative;
+  display: inline-block;
+
+  /* Color cycle animation */
+  animation: colorCycle 3s linear infinite, titleFlicker 6s steps(1) infinite;
+
+  /* Base gradient */
+  background: linear-gradient(90deg, #CD4243, #426E71, #86B0B8, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glitch pseudo-layers */
+.title-glitch::before,
+.title-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.title-glitch::before {
+  background: linear-gradient(90deg, #CD4243, #426E71, #86B0B8, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ff003c;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  animation: glitchTop 4s steps(1) infinite;
+  opacity: 0;
+}
+
+.title-glitch::after {
+  -webkit-text-fill-color: #00f5ff;
+  clip-path: polygon(0 66%, 100% 66%, 100% 100%, 0 100%);
+  animation: glitchBot 4s steps(1) infinite;
+  opacity: 0;
+}
+
+@keyframes glitchTop {
+  0%, 90%, 100% { opacity: 0; transform: translateX(0); }
+  91%            { opacity: 1; transform: translateX(-4px); }
+  93%            { opacity: 1; transform: translateX(4px); }
+  95%            { opacity: 0; }
+}
+
+@keyframes glitchBot {
+  0%, 88%, 100% { opacity: 0; transform: translateX(0); }
+  89%            { opacity: 1; transform: translateX(4px); }
+  92%            { opacity: 1; transform: translateX(-4px); }
+  94%            { opacity: 0; }
+}
+
+@keyframes titleFlicker {
+  0%, 97%, 100%  { opacity: 1; }
+  98%            { opacity: 0.1; }
+  99%            { opacity: 1; }
+}
+
+@keyframes colorCycle {
+  0%   { filter: hue-rotate(0deg) brightness(1); }
+  50%  { filter: hue-rotate(30deg) brightness(1.2); }
+  100% { filter: hue-rotate(0deg) brightness(1); }
+}
+
+/* Scanline overlay across title */
+.title-scanline {
+  position: absolute;
+  top: 0; left: -10%; right: -10%; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.25) 2px,
+    rgba(0,0,0,0.25) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 4px;
+}
+
+/* INSERT COIN blinking subtitle */
+.title-sub {
+  font-size: 0.55rem;
+  letter-spacing: 4px;
+  color: #ffeb3b;
+  text-align: center;
+  margin-top: 14px;
+  animation: insertCoin 1.2s steps(1) infinite;
+}
+
+@keyframes insertCoin {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.coin-blink {
+  color: #ff9800;
+  animation: coinSpin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes coinSpin {
+  0%   { transform: scaleX(1); }
+  50%  { transform: scaleX(0.1); }
+  100% { transform: scaleX(1); }
 }
 
 /* remove all link underlines */
@@ -65,15 +205,7 @@ header {
 
   padding: 60px 20px;
 
-  background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
-    url('../assets/images/channel-banner.jpg');
-
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  background-color: #05070d;
+  background: transparent;
 }
 
 .hero h1,
@@ -93,7 +225,7 @@ h2 {
 /* HERO TEXT */
 .hero p {
   font-size: 0.7rem;
-  color: #000000;
+  color: rgba(255,255,255,0.75);
   margin-bottom: 50px;
 }
 
@@ -218,8 +350,7 @@ section {
    ABOUT
 ========================= */
 .about-section {
-  background:
-    linear-gradient(180deg, #0b1220 0%, #070b14 100%);
+  background: rgba(5, 7, 13, 0.7);
 }
 
 .about-container {

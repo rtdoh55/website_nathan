@@ -1,3 +1,97 @@
+// =========================
+// STARFIELD CANVAS
+// =========================
+(function () {
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+
+  let W, H, stars = [];
+
+  const STAR_COUNT = 180;
+  const PIXEL_SIZE_MIN = 1;
+  const PIXEL_SIZE_MAX = 3;
+  const SPEED_MIN = 0.3;
+  const SPEED_MAX = 1.8;
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function randomStar(fromBottom) {
+    const size = PIXEL_SIZE_MIN + Math.random() * (PIXEL_SIZE_MAX - PIXEL_SIZE_MIN);
+    return {
+      x: Math.random() * W,
+      y: fromBottom ? H + Math.random() * H : Math.random() * H,
+      size: size,
+      baseSize: size,
+      speed: SPEED_MIN + Math.random() * (SPEED_MAX - SPEED_MIN),
+      // growth wobble phase
+      phase: Math.random() * Math.PI * 2,
+      // slight horizontal drift
+      drift: (Math.random() - 0.5) * 0.15,
+      // brightness flicker
+      alpha: 0.5 + Math.random() * 0.5
+    };
+  }
+
+  function init() {
+    resize();
+    stars = [];
+    for (let i = 0; i < STAR_COUNT; i++) {
+      stars.push(randomStar(false));
+    }
+  }
+
+  function draw(ts) {
+    ctx.clearRect(0, 0, W, H);
+
+    for (let i = 0; i < stars.length; i++) {
+      const s = stars[i];
+
+      // Move upward + drift
+      s.y -= s.speed;
+      s.x += s.drift;
+      s.phase += 0.02;
+
+      // Pulse size slightly
+      s.size = s.baseSize + Math.sin(s.phase) * 0.5;
+
+      // Recycle when off-screen
+      if (s.y + s.size < 0) {
+        stars[i] = randomStar(true);
+        continue;
+      }
+
+      // Draw pixel square
+      const alpha = s.alpha * (0.7 + 0.3 * Math.sin(s.phase));
+      ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+      ctx.fillRect(
+        Math.round(s.x),
+        Math.round(s.y),
+        Math.ceil(s.size),
+        Math.ceil(s.size)
+      );
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    // Redistribute stars on resize
+    stars.forEach(s => {
+      s.x = Math.random() * W;
+    });
+  });
+
+  init();
+  requestAnimationFrame(draw);
+})();
+
+// =========================
+// VIDEO GRID
+// =========================
 const videos = [
   {
     title: 'Travel Cinematic Reel',
