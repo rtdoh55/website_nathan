@@ -101,18 +101,18 @@ document.addEventListener('DOMContentLoaded', function () {
 // =========================
 const videos = [
   {
-    title: 'Travel Cinematic Reel',
-    description: 'Drone footage and cinematic travel storytelling.',
+    title: 'mynameisntjmack',
+    description: '3 ounces [Official Music Video]',
     youtubeId: 'l61OVu_VVak'
   },
   {
-    title: 'Commercial Product Edit',
-    description: 'High-end product commercial with motion graphics.',
+    title: 'Unusual Demont',
+    description: 'Company [Official Music Video]',
     youtubeId: 'hy4HhWOmjuQ'
   },
   {
-    title: 'Documentary Interview',
-    description: 'Narrative-focused documentary editing project.',
+    title: 'Jade LeMac',
+    description: 'Sleeping with the Lights On [Official Music Video]',
     youtubeId: 'jHukgl8QC94'
   },
   {
