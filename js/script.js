@@ -101,6 +101,26 @@ document.addEventListener('DOMContentLoaded', function () {
 // =========================
 const videos = [
   {
+    title: 'Travel Cinematic Reel',
+    description: 'Drone footage and cinematic travel storytelling.',
+    youtubeId: 'l61OVu_VVak'
+  },
+  {
+    title: 'Commercial Product Edit',
+    description: 'High-end product commercial with motion graphics.',
+    youtubeId: 'hy4HhWOmjuQ'
+  },
+  {
+    title: 'Documentary Interview',
+    description: 'Narrative-focused documentary editing project.',
+    youtubeId: 'jHukgl8QC94'
+  },
+  {
+    title: 'Gwen Bunn',
+    description: 'Extra Mile [Official Music Video]',
+    youtubeId: 'D2p3FGeNtzc'
+  },
+   {
     title: 'Kwame Adu',
     description: "Ain't 2 Proud [Official Music Video]",
     youtubeId: 'KPS4xAIlFEI'
