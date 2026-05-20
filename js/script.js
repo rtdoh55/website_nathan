@@ -112,7 +112,7 @@ const videos = [
   },
   {
     title: 'Bas',
-    description: 'Pangea Sound with Cozz [Directed by Nate Doh]',
+    description: 'Pangea Sound with Cozz',
     youtubeId: 'ZSIKDkj8lWE'
   }
 ];
