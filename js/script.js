@@ -101,19 +101,19 @@ document.addEventListener('DOMContentLoaded', function () {
 // =========================
 const videos = [
   {
-    title: 'Travel Cinematic Reel',
-    description: 'Drone footage and cinematic travel storytelling.',
-    youtubeId: 'l61OVu_VVak'
+    title: 'Kwame Adu',
+    description: "Ain't 2 Proud [Official Music Video]",
+    youtubeId: 'KPS4xAIlFEI'
   },
   {
-    title: 'Commercial Product Edit',
-    description: 'High-end product commercial with motion graphics.',
-    youtubeId: 'hy4HhWOmjuQ'
+    title: 'Elias The Infinite',
+    description: 'Take That Back',
+    youtubeId: 'yIwdAmCzRz4'
   },
   {
-    title: 'Documentary Interview',
-    description: 'Narrative-focused documentary editing project.',
-    youtubeId: 'jHukgl8QC94'
+    title: 'Bas',
+    description: 'Pangea Sound with Cozz [Directed by Nate Doh]',
+    youtubeId: 'ZSIKDkj8lWE'
   },
   {
     title: 'Music Video Production',
