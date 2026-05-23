@@ -50,6 +50,7 @@ header, section, .logo-saturn {
 .title-glitch {
   font-size: clamp(2rem, 7vw, 4.5rem);
   letter-spacing: 6px;
+  word-spacing: -0.2em;
   position: relative;
   display: inline-block;
 
@@ -339,9 +340,8 @@ section {
 
 .about-container {
   text-align: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .about-container h2 {
@@ -350,7 +350,7 @@ section {
 
 .about-container p {
   font-size: 0.65rem;
-  color: #ffffff;
+  color: rgba(255,255,255,0.75);
   line-height: 2.2;
 }
 
