@@ -101,6 +101,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // =========================
 const videos = [
   {
+    title: 'Smokepurpp',
+    description: 'SHE DA BIRTHDAY [Official Music Video]',
+    youtubeId: '30pEmPW4P'
+  },
+  {
+    title: 'Conductor Williams & Bart Oatmeal',
+    description: 'GOH  [Official Music Video]',
+    youtubeId: 'Mrq-F52KguY'
+  },
+  {
     title: 'mynameisntjmack',
     description: '3 ounces [Official Music Video]',
     youtubeId: 'l61OVu_VVak'
