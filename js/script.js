@@ -103,12 +103,12 @@ const videos = [
   {
     title: 'Smokepurpp',
     description: 'SHE DA BIRTHDAY [Official Music Video]',
-    youtubeId: '30pEmPW4P-0'
+    youtubeId: '30pEmPW4P-0',
+    thumbnail: 'assets/images/Thumbnail.jpg'
   },
-  {
-    title: 'Conductor Williams & Bart Oatmeal',
+  { title: 'Conductor Williams & Bart Oatmeal', 
     description: 'GOH  [Official Music Video]',
-    youtubeId: 'Mrq-F52KguY'
+    youtubeId: 'Mrq-F52KguY' 
   },
   {
     title: 'mynameisntjmack',
@@ -155,14 +155,24 @@ videos.forEach(video => {
 
   card.classList.add("video-card");
 
-  card.innerHTML = `
+  const mediaHTML = video.thumbnail
+    ? `
+    <a class="video-thumb-link" href="https://www.youtube.com/watch?v=${video.youtubeId}" target="_blank" rel="noopener">
+      <img class="video-thumb" src="${video.thumbnail}" alt="${video.title}">
+      <span class="video-thumb-play">&#9654;</span>
+    </a>
+    `
+    : `
     <iframe
       src="https://www.youtube.com/embed/${video.youtubeId}"
       title="${video.title}"
       frameborder="0"
       allowfullscreen>
     </iframe>
+    `;
 
+  card.innerHTML = `
+    ${mediaHTML}
     <div class="video-content">
       <h3>${video.title}</h3>
       <p>${video.description}</p>
